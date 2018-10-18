@@ -1,3 +1,22 @@
-import Button from "./Button";
+---
+name: Button
+---
 
-<Button>Click me</Button>
+import Button from "./Button";
+import { Playground, PropsTable } from "docz";
+
+# Button
+
+
+## Properties
+<PropsTable of={Button} />
+
+
+## Basic usage
+<Playground>
+    <Button>Click me!</Button>
+    <Button kind="secondary">Click me!</Button>
+
+</Playground>
+
+
