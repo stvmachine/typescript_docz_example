@@ -41,8 +41,10 @@ export const Button = ({ children, ...props }) => (
 );
 
 Button.propTypes = {
-  kind: PropTypes.oneOf(Object.keys(kinds)),
-  scale: PropTypes.oneOf(Object.keys(scales))
+  /** Accepted types: ["primary", "secondary", "cancel", "dark", "gray"] */
+  kind: PropTypes.string,
+  /** Accepted types: ["big", "normal", "small"] */
+  scale: PropTypes.string,
 };
 
 Button.defaultProps = {
