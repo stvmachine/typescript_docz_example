@@ -1,16 +1,18 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+import React from "react";
 
-const display = (backgroundColor, color) =>
+const displayKind = (backgroundColor, color) =>
   `background-color: ${backgroundColor}; 
    color: ${color};
    `;
 
 const kinds = {
-  primary: display("#1FB6FF", "white"),
-  secondary: display("#5352ED", "white"),
-  cancel: display("#FF4949", "white"),
-  dark: display("#273444", "white"),
-  gray: display("#8492A6", "white")
+  primary: displayKind("#1FB6FF", "white"),
+  secondary: displayKind("#5352ED", "white"),
+  cancel: displayKind("#FF4949", "white"),
+  dark: displayKind("#273444", "white"),
+  gray: displayKind("#8492A6", "white")
 };
 
 const scales = {
@@ -28,12 +30,24 @@ const scales = {
     `
 };
 
-const Button = styled.button`
+const ButtonStyled = styled.button`
   width: 200px;
-  ${props => (props.scale ? scales[props.scale] : scales.normal)};
-  ${props =>
-    props.kind ? kinds[props.kind] : kinds.primary};
+  ${({ scale }) => scales[scale]};
+  ${({ kind }) => kinds[kind]};
 `;
 
+export const Button = ({ children, ...props }) => (
+  <ButtonStyled {...props}>{children}</ButtonStyled>
+);
+
+Button.propTypes = {
+  kind: PropTypes.oneOf(Object.keys(kinds)),
+  scale: PropTypes.oneOf(Object.keys(scales))
+};
+
+Button.defaultProps = {
+  kind: "primary",
+  scale: "normal"
+};
 
 export default Button;

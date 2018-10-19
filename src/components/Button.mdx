@@ -9,14 +9,23 @@ import { Playground, PropsTable } from "docz";
 
 
 ## Properties
-<PropsTable of={Button} />
+<PropsTable of={Button}/>
 
 
 ## Basic usage
 <Playground>
     <Button>Click me!</Button>
     <Button kind="secondary">Click me!</Button>
+    <Button kind="cancel">Click me!</Button>
+    <Button kind="dark">Click me!</Button>
+    <Button kind="gray">Click me!</Button>
+</Playground>
 
+## Differents sizes
+<Playground>
+    <Button scale="small">Small</Button>
+    <Button kind="secondary">Click me!</Button>
+    <Button kind="cancel" scale="big">Click me!</Button>
 </Playground>
 
 

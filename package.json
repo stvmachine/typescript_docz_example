@@ -27,6 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "docz": "^0.12.5"
+    "docz": "^0.12.5",
+    "prop-types": "^15.6.2"
   }
 }
